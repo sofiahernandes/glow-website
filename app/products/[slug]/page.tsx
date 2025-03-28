@@ -30,7 +30,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 lg:mx-20 md:mx-10 items-start">
               <div className="relative aspect-square overflow-hidden rounded-xl">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                <Image src={product?.image} alt={product.name} fill className="object-cover" />
               </div>
               <div className="space-y-6">
                 <div>

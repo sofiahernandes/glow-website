@@ -5,7 +5,7 @@ export const products = [
     slug: "my-finances",
     category: ["Planners"],
     price: 5.55,
-    image: "/public/product-images/my-finances-pic.jpg",
+    image: "/my-finances-pic.jpg",
     features: [
       "Monthly budget and income tracking",
       "Automatic calculations and responsive charts",
@@ -27,7 +27,7 @@ export const products = [
     slug: "my-studies",
     category: ["Planners"],
     price: 5.55,
-    image: "/public/product-images/my-studies-pic.jpg",
+    image: "/my-studies-pic.jpg",
     features: [
       "Active study progress analysis",
       "Organize study by subject, topic, and date",
@@ -47,7 +47,7 @@ export const products = [
     slug: "ultimate-planner",
     category: ["Planners", "Calendars"],
     price: 4.44,
-    image: "/public/product-images/ultimate-planner-pic.jpg",
+    image: "/ultimate-planner-pic.jpg",
     features: [
       "Daily schedule with hourly time blocks",
       "Weekly schedule for important highlights",
