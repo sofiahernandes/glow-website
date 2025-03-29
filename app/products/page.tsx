@@ -8,11 +8,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 
 import { products } from "@/lib/products"
+import myFinances from "@/public/my-finances.jpg"
+import myStudies from "@/public/my-studies.jpg"
+import ultimatePlanner from "@/public/ultimate-planner.jpg"
 
 export default function ProductsPage() {
   const [category, setCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
-
+  
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
       category === "all" || product.category.some((cat) => cat.toLowerCase() === category.toLowerCase())
@@ -71,11 +74,11 @@ export default function ProductsPage() {
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredProducts.map((product) => (
-                  <Link key={product.id} href={`/products/${product.slug}`} className="group">
+                  <Link key={product.id} href={product.url} className="group">
                     <Card className="overflow-hidden transition-all duration-200 hover:shadow-lg">
                       <div className="aspect-video relative">
                         <Image
-                          src={product.image}
+                          src="/placeholder.svg" // Replace with product.image
                           alt={product.name}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -91,7 +94,6 @@ export default function ProductsPage() {
                           </div>
                         ))}
                         <h3 className="font-semibold text-lg">{product.name}</h3>
-                        <p className="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
                         <div className="flex items-center justify-between mt-4">
                           <span className="font-bold text-blue-600">${product.price}</span>
                         </div>

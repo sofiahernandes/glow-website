@@ -1,3 +1,4 @@
+{/*
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -30,7 +31,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 lg:mx-20 md:mx-10 items-start">
               <div className="relative aspect-square overflow-hidden rounded-xl">
-                <Image src={product?.image} alt={product.name} fill className="object-cover" />
+                <Image src={product.image.myFinances || product.image.myStudies || product.image.ultimatePlanner || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
               </div>
               <div className="space-y-6">
                 <div>
@@ -82,7 +83,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        {/* Related Products */}
+        {/* Related Products 
         <section className="w-full py-12 md:py-24 bg-blue-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -119,6 +120,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   )
 }
 
+
 function relatedProducts(currentProductId: number) {
   // Filter out the current product and return 3 random products
   return products
@@ -127,3 +129,4 @@ function relatedProducts(currentProductId: number) {
     .slice(0, 3)
 }
 
+*/}

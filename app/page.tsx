@@ -9,7 +9,7 @@ import { products } from "@/lib/products"
 
 export default function Home() {
   // Get the first two products for the featured section
-  const featuredProducts = products.slice(0, 2)
+  const featuredProducts = products.slice(0, 3)
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -57,13 +57,13 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+            <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mt-8">
               {featuredProducts.map((product) => (
-                <Link key={product.id} href={`/products/${product.slug}`} className="group">
+                <Link key={product.id} href={product.url} className="group">
                   <Card className="overflow-hidden transition-all duration-200 hover:shadow-lg">
                     <div className="aspect-video relative">
                       <Image
-                        src={product.image}
+                        src={"/placeholder.svg"} // Replace with product.image
                         alt={product.name}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
